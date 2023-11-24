@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google';
 import '../globals.css';
 
 export const metadata = {
-  title: 'Threads',
+  title: 'BillyBost',
   description: 'Best Social Media App in 2023',
 };
 

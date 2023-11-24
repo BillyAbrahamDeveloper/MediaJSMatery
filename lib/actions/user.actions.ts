@@ -35,7 +35,7 @@ export const updateUser = async ({
         image,
         onboarded: true,
       },
-      { upsert: true, maxTimeMS: 30000 }
+      { upsert: true }
     );
 
     if (path === '/profile/edit') {
@@ -43,5 +43,19 @@ export const updateUser = async ({
     }
   } catch (error: any) {
     throw new Error(`Faild to create/update user ${error.message}`);
+  }
+};
+
+export const fetchUser = async (userId: string) => {
+  try {
+    connectToDB();
+
+    return await User.findOne({ id: userId });
+    // .populate({
+    //    path: 'communities',
+    //    model:'Community'
+    // });
+  } catch (error: any) {
+    throw new Error(error.message);
   }
 };
