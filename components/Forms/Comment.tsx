@@ -47,7 +47,6 @@ const Comment = ({ threadId, currentUserImg, currentUserId }: Props) => {
     );
 
     form.reset();
-    console.log(form.reset());
   };
 
   return (
